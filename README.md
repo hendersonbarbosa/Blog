@@ -1,5 +1,39 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Banco de dados
+
+O projeto usa Prisma 7 com MySQL. Para configurar a conexão:
+
+```bash
+copy .env.example .env
+```
+
+Depois, ajuste `DATABASE_URL` no arquivo `.env`:
+
+```env
+DATABASE_URL="mysql://USUARIO:SENHA@localhost:3306/NOME_DO_BANCO"
+```
+
+Com a URL configurada, use os comandos abaixo:
+
+```bash
+npm run db:generate
+npm run db:push
+```
+
+O cliente reutilizável está disponível em `@/lib/prisma`. Para criar migrations versionadas, use `npm run db:migrate`.
+
+As imagens de capa são informadas como URLs externas no painel administrativo e armazenadas no campo `coverImage` do post.
+
+Para enviar arquivos diretamente pelo painel, configure no `.env` um **Cloud Name** e um **Upload Preset unsigned** do Cloudinary:
+
+```env
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="seu-cloud-name"
+NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET="seu-upload-preset"
+```
+
+O upload preset deve aceitar upload sem assinatura e limitar o tamanho/tipos de arquivo no painel do Cloudinary. A chave secreta do Cloudinary não deve ser colocada no frontend.
+
 ## Getting Started
 
 First, run the development server:
