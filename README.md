@@ -1,3 +1,5 @@
+> O site est? em modo de demonstra??o, sem conex?o com banco de dados. Os posts ficam apenas na mem?ria do servidor e s?o perdidos ao reiniciar. A estrutura do Prisma foi mantida como refer?ncia e n?o ? usada pelas p?ginas ou pela API. N?o ? necess?rio configurar DATABASE_URL para executar o site.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Banco de dados
